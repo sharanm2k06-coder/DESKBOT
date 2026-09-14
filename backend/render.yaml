@@ -1,0 +1,31 @@
+databases:
+  - name: deskbot-db
+    plan: free
+    databaseName: deskbot
+    user: deskbot
+
+services:
+  - type: web
+    name: deskbot-backend
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: deskbot-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: "https://your-frontend.vercel.app"
+      - key: ENVIRONMENT
+        value: production
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "1440"
+      - key: SCHEDULER_POLL_INTERVAL_SECONDS
+        value: "30"
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "120"

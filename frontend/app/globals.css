@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-void text-ink antialiased;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 255, 255, 0.04), transparent);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: #ffffff;
+    color: #08090a;
+  }
+
+  /* Visible keyboard focus everywhere — no outline: none anywhere in this app. */
+  :focus-visible {
+    outline: 1.5px solid theme("colors.signal");
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-panel border border-line rounded-panel;
+  }
+
+  .label-tech {
+    @apply text-[11px] tracking-[0.04em] text-ink-faint font-mono;
+  }
+}

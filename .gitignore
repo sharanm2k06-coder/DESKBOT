@@ -1,0 +1,31 @@
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Node and Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Android and Gradle
+.gradle/
+local.properties
+android/**/build/
+
+# Arduino and editor artifacts
+.vscode/
+*.user
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DeskBot Companion</string>
+    <string name="notif_channel_service">DeskBot connection</string>
+    <string name="notif_channel_messages">DeskBot messages</string>
+    <string name="fg_service_title">DeskBot Companion</string>
+    <string name="fg_service_text">Keeping DeskBot connected</string>
+</resources>
