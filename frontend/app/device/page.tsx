@@ -109,6 +109,7 @@ function DeviceContent() {
                 <div>
                   <p className="text-sm text-ink">{d.name}</p>
                   <p className="text-xs text-ink-faint">{d.device_uid}</p>
+                  <p className="break-all font-mono text-[10px] text-ink-faint">backend id {d.id}</p>
                 </div>
                 <div className="space-y-1.5 text-xs text-ink-dim sm:text-right">
                   <div className="flex items-center gap-2 sm:justify-end">
