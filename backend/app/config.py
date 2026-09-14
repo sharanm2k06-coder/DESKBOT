@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     device_key_length: int = 40
 
     # --- CORS -------------------------------------------------------------
-    cors_origins: str = "http://localhost:3000"
+    cors_origins: str = "http://localhost:3000,https://simple-deskbot.vercel.app"
 
     # --- Scheduler --------------------------------------------------------
     scheduler_poll_interval_seconds: int = 30
